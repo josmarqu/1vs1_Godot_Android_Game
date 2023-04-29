@@ -2,7 +2,7 @@ extends Node
 
 func _ready():
 	var hbox_container = get_node("HBoxContainer")
-	var btn_race = hbox_container.get_node("Race")
+	var btn_race = hbox_container.get_node("Slot Race")
 	btn_race.connect("pressed", self, "_on_button_pressed", [btn_race])
 
 	var btn_ping_pong = hbox_container.get_node("Ping Pong")
@@ -13,8 +13,8 @@ func _ready():
 
 func _on_button_pressed(button):
 	match button.name:
-		"Race":
-			get_tree().change_scene("res://scenes/Race.tscn")
+		"Slot Race":
+			get_tree().change_scene("res://scenes/SlotRace.tscn")
 	match button.name:
 		"Ping Pong":
 			get_tree().change_scene("res://scenes/PingPong.tscn")

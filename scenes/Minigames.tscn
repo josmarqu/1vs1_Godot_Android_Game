@@ -24,12 +24,12 @@ margin_right = -50.0
 margin_bottom = -525.0
 custom_constants/separation = 100
 
-[node name="Race" type="Button" parent="HBoxContainer"]
+[node name="Slot Race" type="Button" parent="HBoxContainer"]
 margin_right = 133.0
 margin_bottom = 150.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
-text = "Race"
+text = "Slot Race"
 
 [node name="Ping Pong" type="Button" parent="HBoxContainer"]
 margin_left = 233.0
