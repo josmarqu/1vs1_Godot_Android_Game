@@ -2,23 +2,23 @@
 
 [ext_resource path="res://src/images/background_placeholder.jpg" type="Texture" id=1]
 
-[node name="Race" type="Control"]
+[node name="RaceWorld" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TextureRect"]
+[node name="Components" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MarginContainer" type="MarginContainer" parent="TextureRect/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Components"]
 margin_right = 700.0
 margin_bottom = 119.0
 size_flags_horizontal = 3
@@ -26,7 +26,7 @@ size_flags_vertical = 3
 custom_constants/margin_top = 15
 custom_constants/margin_left = 30
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer/MarginContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Components/MarginContainer"]
 margin_left = 30.0
 margin_top = 15.0
 margin_right = 700.0
@@ -34,26 +34,26 @@ margin_bottom = 119.0
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Button" type="Button" parent="TextureRect/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="Button" type="Button" parent="Components/MarginContainer/HBoxContainer"]
 margin_right = 133.0
 margin_bottom = 104.0
 size_flags_horizontal = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer/MarginContainer/HBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Components/MarginContainer/HBoxContainer"]
 margin_left = 137.0
 margin_right = 670.0
 margin_bottom = 104.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 
-[node name="HBoxContainer2" type="HBoxContainer" parent="TextureRect/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Components"]
 margin_top = 123.0
 margin_right = 700.0
 margin_bottom = 1076.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 8.0
 
-[node name="MarginContainer2" type="MarginContainer" parent="TextureRect/VBoxContainer"]
+[node name="MarginContainer2" type="MarginContainer" parent="Components"]
 margin_top = 1080.0
 margin_right = 700.0
 margin_bottom = 1200.0
@@ -62,18 +62,18 @@ size_flags_vertical = 3
 custom_constants/margin_right = 30
 custom_constants/margin_bottom = 15
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="TextureRect/VBoxContainer/MarginContainer2"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Components/MarginContainer2"]
 margin_right = 670.0
 margin_bottom = 105.0
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect/VBoxContainer/MarginContainer2/HBoxContainer3"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Components/MarginContainer2/HBoxContainer3"]
 margin_right = 532.0
 margin_bottom = 105.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 
-[node name="Button" type="Button" parent="TextureRect/VBoxContainer/MarginContainer2/HBoxContainer3"]
+[node name="Button" type="Button" parent="Components/MarginContainer2/HBoxContainer3"]
 margin_left = 536.0
 margin_right = 670.0
 margin_bottom = 105.0
