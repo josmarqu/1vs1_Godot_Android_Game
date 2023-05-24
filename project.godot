@@ -19,6 +19,11 @@ config/icon="res://icon.png"
 window/size/width=700
 window/size/height=1200
 
+[global]
+
+Settings=false
+fps=false
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
