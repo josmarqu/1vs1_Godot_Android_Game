@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/images/background_placeholder.jpg" type="Texture" id=1]
 [ext_resource path="res://scripts/SlotRace/Gameplay.gd" type="Script" id=2]
 [ext_resource path="res://sprites/blue_car.png" type="Texture" id=3]
 [ext_resource path="res://sprites/circuit.png" type="Texture" id=4]
 [ext_resource path="res://sprites/green_car.png" type="Texture" id=5]
+[ext_resource path="res://scripts/SlotRace/SlotRace.gd" type="Script" id=7]
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -21,7 +22,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id=4]
 
 [node name="SlotRace" type="Node"]
-script = ExtResource( 2 )
+script = ExtResource( 7 )
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0
@@ -109,6 +110,7 @@ margin_bottom = 105.0
 size_flags_horizontal = 3
 
 [node name="RaceWorld" type="Node2D" parent="."]
+script = ExtResource( 2 )
 
 [node name="Player1Path2D" type="Path2D" parent="RaceWorld"]
 curve = SubResource( 1 )
@@ -130,6 +132,8 @@ shape = SubResource( 2 )
 curve = SubResource( 3 )
 
 [node name="Player2PathFollow2D" type="PathFollow2D" parent="RaceWorld/Player2Path2D"]
+position = Vector2( 121, 760 )
+rotation = -1.5708
 
 [node name="Player2Area2D" type="Area2D" parent="RaceWorld/Player2Path2D/Player2PathFollow2D"]
 
