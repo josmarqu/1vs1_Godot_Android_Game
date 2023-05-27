@@ -6,38 +6,41 @@
 [ext_resource path="res://sprites/circuit.png" type="Texture" id=4]
 [ext_resource path="res://sprites/green_car.png" type="Texture" id=5]
 
-[sub_resource type="Curve2D" id=3]
+[sub_resource type="Curve2D" id=1]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 87, 636, 0, 0, 0, 0, 87, 78, 0, 0, 0, 0, 100, 68, 0, 0, 0, 0, 604, 69, 0, 0, 0, 0, 617, 79, 0, 0, 0, 0, 616, 252, 0, 0, 0, 0, 603, 261, 0, 0, 0, 0, 237, 261, 0, 0, 0, 0, 227, 271, 0, 0, 0, 0, 227, 392, 0, 0, 0, 0, 238, 399, 0, 0, 0, 0, 601, 400, 0, 0, 0, 0, 613, 410, 0, 0, 0, 0, 612, 878, 0, 0, 0, 0, 599, 887, 0, 0, 0, 0, 100, 886, 0, 0, 0, 0, 87, 877, 0, 0, 0, 0, 87, 636 )
+"points": PoolVector2Array( 0, 0, 0, 0, 87, 760, 0, 0, 0, 0, 87, 201, 0, 0, 0, 0, 101, 191, 0, 0, 0, 0, 605, 191, 0, 0, 0, 0, 617, 202, 0, 0, 0, 0, 617, 375, 0, 0, 0, 0, 604, 384, 0, 0, 0, 0, 237, 385, 0, 0, 0, 0, 227, 393, 0, 0, 0, 0, 228, 514, 0, 0, 0, 0, 238, 522, 0, 0, 0, 0, 600, 522, 0, 0, 0, 0, 613, 533, 0, 0, 0, 0, 612, 1001, 0, 0, 0, 0, 599, 1011, 0, 0, 0, 0, 99, 1009, 0, 0, 0, 0, 87, 999, 0, 0, 0, 0, 87, 760 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
 
-[sub_resource type="Curve2D" id=4]
+[sub_resource type="Curve2D" id=3]
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 121, 636, 0, 0, 0, 0, 121, 104, 0, 0, 0, 0, 132, 95, 0, 0, 0, 0, 573, 96, 0, 0, 0, 0, 583, 105, 0, 0, 0, 0, 583, 226, 0, 0, 0, 0, 572, 234, 0, 0, 0, 0, 205, 235, 0, 0, 0, 0, 193, 245, 0, 0, 0, 0, 193, 417, 0, 0, 0, 0, 206, 426, 0, 0, 0, 0, 569, 427, 0, 0, 0, 0, 579, 436, 0, 0, 0, 0, 578, 853, 0, 0, 0, 0, 568, 861, 0, 0, 0, 0, 131, 861, 0, 0, 0, 0, 121, 853, 0, 0, 0, 0, 121, 636 )
+"points": PoolVector2Array( 0, 0, 0, 0, 121, 760, 0, 0, 0, 0, 121, 227, 0, 0, 0, 0, 132, 218, 0, 0, 0, 0, 572, 218, 0, 0, 0, 0, 583, 228, 0, 0, 0, 0, 583, 349, 0, 0, 0, 0, 572, 357, 0, 0, 0, 0, 206, 357, 0, 0, 0, 0, 193, 368, 0, 0, 0, 0, 193, 539, 0, 0, 0, 0, 206, 549, 0, 0, 0, 0, 568, 550, 0, 0, 0, 0, 579, 559, 0, 0, 0, 0, 579, 976, 0, 0, 0, 0, 568, 984, 0, 0, 0, 0, 132, 984, 0, 0, 0, 0, 121, 976, 0, 0, 0, 0, 121, 760 )
 }
 
-[sub_resource type="RectangleShape2D" id=5]
+[sub_resource type="RectangleShape2D" id=4]
 
-[node name="RaceWorld" type="Control"]
+[node name="SlotRace" type="Node"]
+script = ExtResource( 2 )
+
+[node name="UI" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
 
-[node name="SceneBackground" type="TextureRect" parent="."]
+[node name="SceneBackground" type="TextureRect" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
 
-[node name="Components" type="VBoxContainer" parent="."]
+[node name="Components" type="VBoxContainer" parent="UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource( 2 )
+custom_constants/separation = 4
 
-[node name="Player1MarginArea" type="MarginContainer" parent="Components"]
+[node name="Player1MarginArea" type="MarginContainer" parent="UI/Components"]
 margin_right = 700.0
 margin_bottom = 119.0
 size_flags_horizontal = 3
@@ -45,7 +48,7 @@ size_flags_vertical = 3
 custom_constants/margin_top = 15
 custom_constants/margin_left = 30
 
-[node name="Player1ControlPanel" type="HBoxContainer" parent="Components/Player1MarginArea"]
+[node name="Player1ControlPanel" type="HBoxContainer" parent="UI/Components/Player1MarginArea"]
 margin_left = 30.0
 margin_top = 15.0
 margin_right = 700.0
@@ -53,66 +56,33 @@ margin_bottom = 119.0
 size_flags_vertical = 3
 alignment = 1
 
-[node name="Player1Button" type="Button" parent="Components/Player1MarginArea/Player1ControlPanel"]
+[node name="Player1Button" type="Button" parent="UI/Components/Player1MarginArea/Player1ControlPanel"]
 margin_right = 133.0
 margin_bottom = 104.0
 size_flags_horizontal = 3
 
-[node name="Player1Dashboard" type="HBoxContainer" parent="Components/Player1MarginArea/Player1ControlPanel"]
+[node name="Player1Dashboard" type="HBoxContainer" parent="UI/Components/Player1MarginArea/Player1ControlPanel"]
 margin_left = 137.0
 margin_right = 670.0
 margin_bottom = 104.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 
-[node name="GameWorld" type="HBoxContainer" parent="Components"]
+[node name="GameWorld" type="HBoxContainer" parent="UI/Components"]
 margin_top = 123.0
 margin_right = 700.0
 margin_bottom = 1076.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 8.0
 
-[node name="RaceCircuit" type="TextureRect" parent="Components/GameWorld"]
+[node name="RaceCircuit" type="TextureRect" parent="UI/Components/GameWorld"]
 margin_right = 700.0
 margin_bottom = 953.0
 size_flags_horizontal = 3
 texture = ExtResource( 4 )
 expand = true
 
-[node name="Player1Path2D" type="Path2D" parent="Components/GameWorld"]
-curve = SubResource( 3 )
-
-[node name="Player1PathFollow2D" type="PathFollow2D" parent="Components/GameWorld/Player1Path2D"]
-position = Vector2( 87, 636 )
-rotation = -1.5708
-
-[node name="Player1Car" type="Area2D" parent="Components/GameWorld/Player1Path2D/Player1PathFollow2D"]
-position = Vector2( 1, -1.00001 )
-
-[node name="BlueCar" type="Sprite" parent="Components/GameWorld/Player1Path2D/Player1PathFollow2D/Player1Car"]
-rotation = 1.5708
-texture = ExtResource( 3 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/GameWorld/Player1Path2D/Player1PathFollow2D/Player1Car"]
-shape = SubResource( 2 )
-
-[node name="Player2Path2D" type="Path2D" parent="Components/GameWorld"]
-curve = SubResource( 4 )
-
-[node name="Player2PathFollow2D" type="PathFollow2D" parent="Components/GameWorld/Player2Path2D"]
-position = Vector2( 121, 636 )
-rotation = -1.5708
-
-[node name="Player2Car" type="Area2D" parent="Components/GameWorld/Player2Path2D/Player2PathFollow2D"]
-
-[node name="GreenCar" type="Sprite" parent="Components/GameWorld/Player2Path2D/Player2PathFollow2D/Player2Car"]
-rotation = 1.5708
-texture = ExtResource( 5 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Components/GameWorld/Player2Path2D/Player2PathFollow2D/Player2Car"]
-shape = SubResource( 5 )
-
-[node name="Player2MarginArea" type="MarginContainer" parent="Components"]
+[node name="Player2MarginArea" type="MarginContainer" parent="UI/Components"]
 margin_top = 1080.0
 margin_right = 700.0
 margin_bottom = 1200.0
@@ -121,19 +91,51 @@ size_flags_vertical = 3
 custom_constants/margin_right = 30
 custom_constants/margin_bottom = 15
 
-[node name="Player2ControlPanel" type="HBoxContainer" parent="Components/Player2MarginArea"]
+[node name="Player2ControlPanel" type="HBoxContainer" parent="UI/Components/Player2MarginArea"]
 margin_right = 670.0
 margin_bottom = 105.0
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Components/Player2MarginArea/Player2ControlPanel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Components/Player2MarginArea/Player2ControlPanel"]
 margin_right = 532.0
 margin_bottom = 105.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
 
-[node name="Player2Button" type="Button" parent="Components/Player2MarginArea/Player2ControlPanel"]
+[node name="Player2Button" type="Button" parent="UI/Components/Player2MarginArea/Player2ControlPanel"]
 margin_left = 536.0
 margin_right = 670.0
 margin_bottom = 105.0
 size_flags_horizontal = 3
+
+[node name="RaceWorld" type="Node2D" parent="."]
+
+[node name="Player1Path2D" type="Path2D" parent="RaceWorld"]
+curve = SubResource( 1 )
+
+[node name="Player1PathFollow2D" type="PathFollow2D" parent="RaceWorld/Player1Path2D"]
+position = Vector2( 87, 760 )
+rotation = -1.5708
+
+[node name="Player1Area2D" type="Area2D" parent="RaceWorld/Player1Path2D/Player1PathFollow2D"]
+
+[node name="BlueCar" type="Sprite" parent="RaceWorld/Player1Path2D/Player1PathFollow2D/Player1Area2D"]
+rotation = 1.5708
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceWorld/Player1Path2D/Player1PathFollow2D/Player1Area2D"]
+shape = SubResource( 2 )
+
+[node name="Player2Path2D" type="Path2D" parent="RaceWorld"]
+curve = SubResource( 3 )
+
+[node name="Player2PathFollow2D" type="PathFollow2D" parent="RaceWorld/Player2Path2D"]
+
+[node name="Player2Area2D" type="Area2D" parent="RaceWorld/Player2Path2D/Player2PathFollow2D"]
+
+[node name="GreenCar" type="Sprite" parent="RaceWorld/Player2Path2D/Player2PathFollow2D/Player2Area2D"]
+rotation = 1.5708
+texture = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaceWorld/Player2Path2D/Player2PathFollow2D/Player2Area2D"]
+shape = SubResource( 4 )
