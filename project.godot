@@ -38,9 +38,25 @@ version_control_plugin_name="GitAPI"
 
 singletons=[ "res://addons/godot-git-plugin/git_api.gdnlib" ]
 
+[global]
+
+input=false
+"input map"=true
+
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[input]
+
+slide_left={
+"deadzone": 0.5,
+"events": [  ]
+}
+slide_right={
+"deadzone": 0.5,
+"events": [  ]
+}
 
 [input_devices]
 
