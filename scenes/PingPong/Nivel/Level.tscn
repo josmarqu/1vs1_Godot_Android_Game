@@ -54,13 +54,15 @@ text = "0
 "
 
 [node name="Countdown" type="Label" parent="."]
-margin_left = 487.0
-margin_top = 504.0
-margin_right = 623.0
-margin_bottom = 567.0
+visible = false
+margin_left = 566.0
+margin_top = 503.0
+margin_right = 702.0
+margin_bottom = 599.0
 custom_colors/font_color = Color( 0.85098, 1, 0, 1 )
 custom_fonts/font = SubResource( 5 )
-text = "Countdown
+text = "0
+
 "
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
@@ -97,9 +99,10 @@ position = Vector2( 359, -30 )
 shape = SubResource( 2 )
 
 [node name="ButtonArea" type="Area2D" parent="."]
+position = Vector2( -8, -6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonArea"]
-position = Vector2( 360, 1093 )
+position = Vector2( 368, 1117 )
 shape = SubResource( 2 )
 
 [node name="BallTimer" type="Timer" parent="."]
