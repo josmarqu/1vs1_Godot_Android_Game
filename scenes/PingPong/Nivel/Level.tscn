@@ -64,11 +64,8 @@ text = "Countdown
 "
 
 [node name="Player1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 644, -10 )
-rotation = 1.5708
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 435, -292 )
+rotation = 1.57079
 
 [node name="TopWall" type="StaticBody2D" parent="."]
 
@@ -86,8 +83,8 @@ rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Player2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 643, 949 )
-rotation = 1.5708
+position = Vector2( 724, 1060 )
+rotation = 3.14159
 
 [node name="Ball" parent="." instance=ExtResource( 3 )]
 position = Vector2( 362, 509 )
@@ -96,7 +93,7 @@ rotation = 1.5708
 [node name="TopArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopArea"]
-position = Vector2( 360, -29.75 )
+position = Vector2( 359, -30 )
 shape = SubResource( 2 )
 
 [node name="ButtonArea" type="Area2D" parent="."]
@@ -114,5 +111,5 @@ stream = ExtResource( 6 )
 
 [connection signal="body_entered" from="TopArea" to="." method="_on_TopArea_body_entered"]
 [connection signal="body_entered" from="ButtonArea" to="." method="_on_ButtonArea_body_entered"]
-[connection signal="timeout" from="BallTimer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="BallTimer" to="." method="_on_BallTimer_timeout"]
+[connection signal="timeout" from="BallTimer" to="." method="_on_Timer_timeout"]
