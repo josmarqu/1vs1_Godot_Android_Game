@@ -24,6 +24,10 @@ config/name="1 Vs 1 Godot Android Game"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+GlobalAtributes="*res://scenes/PingPong/global_atributes.gd"
+
 [display]
 
 window/size/width=720
