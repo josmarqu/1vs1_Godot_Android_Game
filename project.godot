@@ -21,7 +21,7 @@ _global_script_class_icons={
 [application]
 
 config/name="1 Vs 1 Godot Android Game"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/PingPong/Nivel/Level.tscn"
 config/icon="res://icon.png"
 
 [autoload]
