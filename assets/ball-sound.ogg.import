@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/ball-sound.ogg-8e3fd98eaf4f2d2f72ac819a98df8289.oggstr"
+
+[deps]
+
+source_file="res://assets/ball-sound.ogg"
+dest_files=[ "res://.import/ball-sound.ogg-8e3fd98eaf4f2d2f72ac819a98df8289.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/PingPong/Player1.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/PingPong/Player2.tscn" type="PackedScene" id=2]
@@ -6,122 +6,107 @@
 [ext_resource path="res://scenes/PingPong/Nivel/Level.gd" type="Script" id=4]
 [ext_resource path="res://assets/Teko-SemiBold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://assets/score_sound.mp3" type="AudioStream" id=6]
-[ext_resource path="res://assets/win-sound.mp3" type="AudioStream" id=7]
 
 [sub_resource type="DynamicFont" id=3]
-size = 30
+size = 22
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 30
+size = 22
 font_data = ExtResource( 5 )
 
 [sub_resource type="DynamicFont" id=5]
-size = 25
+size = 22
 font_data = ExtResource( 5 )
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 540.25, 10 )
+extents = Vector2( 360.5, 23 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 360, 29.25 )
+extents = Vector2( 11.125, 539.5 )
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node2D"]
 script = ExtResource( 4 )
 MaxPoint = 2
 
-[node name="TextureRect" type="TextureRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-
 [node name="ColorRect" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0.0431373, 0.0431373, 0.0431373, 1 )
+margin_right = 721.0
+margin_bottom = 1078.0
+color = Color( 0.0235294, 0.0235294, 0.0235294, 1 )
 
-[node name="ScorePJ1" type="Label" parent="."]
-margin_left = 669.0
-margin_top = 417.0
-margin_right = 709.0
-margin_bottom = 531.0
+[node name="Pj1Score" type="Label" parent="."]
+margin_left = 693.0
+margin_top = 476.0
+margin_right = 704.0
+margin_bottom = 545.0
 custom_fonts/font = SubResource( 3 )
 text = "0
-
 "
 
-[node name="ScorePJ2" type="Label" parent="."]
-margin_left = 672.0
-margin_top = 598.0
-margin_right = 712.0
-margin_bottom = 712.0
+[node name="Pj2Score" type="Label" parent="."]
+margin_left = 692.0
+margin_top = 596.0
+margin_right = 705.0
+margin_bottom = 610.0
 custom_fonts/font = SubResource( 4 )
-text = "0
-
-"
+text = "0"
 
 [node name="Countdown" type="Label" parent="."]
 visible = false
-margin_left = 566.0
-margin_top = 503.0
-margin_right = 702.0
-margin_bottom = 599.0
-custom_colors/font_color = Color( 0.85098, 1, 0, 1 )
+margin_left = 636.0
+margin_top = 534.0
+margin_right = 657.0
+margin_bottom = 603.0
+custom_colors/font_color = Color( 0.917647, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
 text = "0
-
 "
 
-[node name="Player1" parent="." instance=ExtResource( 1 )]
-position = Vector2( 435, -292 )
-rotation = 1.57079
-
-[node name="TopWall" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
-position = Vector2( -10, 539.75 )
-rotation = 1.5708
-shape = SubResource( 1 )
-
-[node name="BottonWall" type="StaticBody2D" parent="."]
-position = Vector2( 1, 1080 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="BottonWall"]
-position = Vector2( 729, -540 )
-rotation = 1.5708
-shape = SubResource( 1 )
-
 [node name="Player2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 724, 1060 )
+position = Vector2( 722, 1076 )
 rotation = 3.14159
 
-[node name="Ball" parent="." instance=ExtResource( 3 )]
-position = Vector2( 362, 509 )
+[node name="Player1" parent="." instance=ExtResource( 1 )]
+position = Vector2( 442, -290 )
 rotation = 1.5708
 
-[node name="TopArea" type="Area2D" parent="."]
+[node name="Ball" parent="." instance=ExtResource( 3 )]
+position = Vector2( 370, 539 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopArea"]
-position = Vector2( 359, -30 )
+[node name="TopWall" type="Area2D" parent="."]
+position = Vector2( 44, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+position = Vector2( 317, 3 )
+shape = SubResource( 1 )
+
+[node name="BottonWall" type="Area2D" parent="."]
+position = Vector2( 44, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottonWall"]
+position = Vector2( 317, 1129 )
+shape = SubResource( 1 )
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2( -116, 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2( 105, 534 )
 shape = SubResource( 2 )
 
-[node name="ButtonArea" type="Area2D" parent="."]
-position = Vector2( -8, -6 )
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2( 235, 15 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ButtonArea"]
-position = Vector2( 368, 1117 )
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2( 499, 524 )
 shape = SubResource( 2 )
-
-[node name="BallTimer" type="Timer" parent="."]
-wait_time = 3.0
-one_shot = true
 
 [node name="PointSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
 
-[node name="WinnerSound" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 7 )
+[node name="BallTimer" type="Timer" parent="."]
+wait_time = 3.0
 
-[connection signal="body_entered" from="TopArea" to="." method="_on_TopArea_body_entered"]
-[connection signal="body_entered" from="ButtonArea" to="." method="_on_ButtonArea_body_entered"]
+[connection signal="body_entered" from="TopWall" to="." method="_on_TopWall_body_entered"]
+[connection signal="body_entered" from="BottonWall" to="." method="_on_BottonWall_body_entered"]
 [connection signal="timeout" from="BallTimer" to="." method="_on_BallTimer_timeout"]
-[connection signal="timeout" from="BallTimer" to="." method="_on_Timer_timeout"]
