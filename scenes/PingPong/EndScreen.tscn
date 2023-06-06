@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://assets/Teko-SemiBold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/PingPong/GlobalAttributes.gd" type="Script" id=2]
+[ext_resource path="res://assets/trophy.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 41
@@ -24,3 +25,8 @@ margin_right = 487.0
 margin_bottom = 632.0
 custom_fonts/font = SubResource( 1 )
 text = "Player %s wins!!!"
+
+[node name="Trophy" type="Sprite" parent="ColorRect"]
+position = Vector2( 357, 416 )
+scale = Vector2( 0.108993, 0.0830029 )
+texture = ExtResource( 3 )

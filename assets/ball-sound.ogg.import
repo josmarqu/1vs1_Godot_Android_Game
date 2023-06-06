@@ -11,5 +11,5 @@ dest_files=[ "res://.import/ball-sound.ogg-8e3fd98eaf4f2d2f72ac819a98df8289.oggs
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

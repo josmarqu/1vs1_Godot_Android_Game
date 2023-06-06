@@ -27,9 +27,9 @@ func pj_score():
 	
 	if Pj1Score == MaxPoint or Pj2Score == MaxPoint:
 		if Pj1Score == MaxPoint:
-			GlobalAtributes.winner = str(1)
+			GlobalAttributes.winner = str(1)
 		else:
-			GlobalAtributes.winner = str(2)
+			GlobalAttributes.winner = str(2)
 		go_to_end_screen()
 		$WinnerSound.play()	
 

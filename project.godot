@@ -26,7 +26,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-GlobalAtributes="*res://scenes/PingPong/global_atributes.gd"
+GlobalAttributes="*res://scenes/PingPong/GlobalAttributes.gd"
 
 [display]
 
