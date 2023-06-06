@@ -1,5 +1,7 @@
 extends Node2D
 
+const LAP_TARGET = 3
+
 var blue_car_speed: float = 0
 var green_car_speed: float = 0
 onready var blue_car = get_node("Player1Path2D/Player1PathFollow2D")
@@ -15,26 +17,17 @@ var green_car_running = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Curves.connect("car_derail", self, "stop_car") # Connect the signal to stop the car
-
-# Getter methods for accessing blue_car_speed and green_car_speed
-func get_blue_car_speed() -> float:
-	return blue_car_speed
-
-func get_green_car_speed() -> float:
-	return green_car_speed
+	pass
 
 func accelerate(player: String):
 	var car_speed: int
 	
-	if player == "Player1":
-		if blue_car_speed <= 0.005:
-			car_speed = blue_car_speed
-			blue_car_speed += 0.001
-	elif player == "Player2":
-		if green_car_speed <= 0.005:
-			car_speed = green_car_speed
-			green_car_speed += 0.001
+	if player == "Player1" and blue_car_speed <= 0.005:
+		car_speed = blue_car_speed
+		blue_car_speed += 0.001
+	elif player == "Player2" and green_car_speed <= 0.005:
+		car_speed = green_car_speed
+		green_car_speed += 0.001
 
 func stop_accelerate(player: String):
 	var car_speed: int
@@ -51,7 +44,7 @@ func stop_accelerate(player: String):
 			green_car_speed -= 0.00025
 		else:
 			green_car_speed = 0
-		
+
 func stop_car(player: String):
 	if player == "Player1":
 		blue_car_speed = 0
@@ -59,20 +52,20 @@ func stop_car(player: String):
 	elif player == "Player2":
 		green_car_speed = 0
 		green_car_running = false
-		
+
 func run_car(player: String):
 	if player == "Player1":
 		blue_car_running = true
 	elif player == "Player2":
 		green_car_running = true
-		
-func play_animation(player: String, pos: String):
+
+func car_in_curve(player: String, pos: String):
 	if player == "Player1":
 		if blue_car_speed > 0.004:
 			stop_car("Player1")
 			if pos == "Right":
 				blue_car_animation.play("DerailRight")
-			if pos == "Left":
+			elif pos == "Left":
 				blue_car_animation.play("DerailLeft")
 
 	if player == "Player2":
@@ -80,35 +73,32 @@ func play_animation(player: String, pos: String):
 			stop_car("Player2")
 			if pos == "Right":
 				green_car_animation.play("DerailRight")
-			if pos == "Left":
+			elif pos == "Left":
 				green_car_animation.play("DerailLeft")
-	
 
 # Called every frame
 func _process(delta: float):
-	if (blue_car_running == true):
+	if blue_car_running:
 		var blue_car_result = update_car(blue_car, blue_car_speed, blue_car_prev_offset, blue_car_laps)
 		blue_car_prev_offset = blue_car_result[0]
 		blue_car_laps = blue_car_result[1]
-	if (green_car_running == true):	
+	if green_car_running:
 		var green_car_result = update_car(green_car, green_car_speed, green_car_prev_offset, green_car_laps)
 		green_car_prev_offset = green_car_result[0]
 		green_car_laps = green_car_result[1]
-	if (blue_car_laps == 3):
+	if blue_car_laps == LAP_TARGET or green_car_laps == LAP_TARGET:
 		blue_car_running = false
 		green_car_running = false
-		print ("Player 1 Win")
-		set_process(false)
-	elif (green_car_laps == 3):
-		green_car_laps = false
-		blue_car_laps = false
-		print("Player 2 Win")	
+		if blue_car_laps == LAP_TARGET:
+			print("Player 1 Win")
+		elif green_car_laps == LAP_TARGET:
+			print("Player 2 Win")
 		set_process(false)
 
 func update_car(car, car_speed, prev_offset, car_laps):
 	var current_offset = car.unit_offset
 	car.unit_offset += car_speed
-	if (current_offset < prev_offset):
+	if current_offset < prev_offset:
 		car_laps += 1
 	prev_offset = current_offset
 	return [prev_offset, car_laps]

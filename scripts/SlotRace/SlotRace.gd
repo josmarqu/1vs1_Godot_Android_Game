@@ -12,43 +12,32 @@ var emit_signal_player2 = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	# Connect signals
-	curves.connect("car_derail_right", self, "play_animation", ["Right"])
-	curves.connect("car_derail_left", self, "play_animation", ["Left"])
-	animation_player1.connect("animation_finished", self, "stop_animation", ["Player1"])
-	animation_player2.connect("animation_finished", self, "stop_animation", ["Player2"])
+	connect_signals()
+
+# Connect signals
+func connect_signals():
+	curves.connect("right_curve", self, "_on_right_curve")
+	curves.connect("left_curve", self, "_on_left_curve")
+	animation_player1.connect("animation_finished", self, "_on_animation_finished", ["Player1"])
+	animation_player2.connect("animation_finished", self, "_on_animation_finished", ["Player2"])
 
 # Enable the player based on the animation
-func stop_animation(animation, player):
+func _on_animation_finished(animation, player):
 	if animation == "DerailRight" || animation == "DerailLeft":
-		if player == "Player1":
-			race_world.run_car("Player1")
-		elif player == "Player2":
-			race_world.run_car("Player2")
+		race_world.run_car(player)
 
-func play_animation(player, pos):
-	if player == "Player1Area2D":
-		if pos == "Right":
-			race_world.play_animation("Player1", "Right")
-		if pos == "Left":
-			race_world.play_animation("Player1", "Left")
-			
-	elif player == "Player2Area2D":
-		if pos == "Right":
-			race_world.play_animation("Player2", "Right")
-		if pos == "Left":
-			race_world.play_animation("Player2", "Left")
-			
+# Handle car in curve events
+func _on_right_curve(player):
+	race_world.car_in_curve(player, "Right")
+
+func _on_left_curve(player):
+	race_world.car_in_curve(player, "Left")
+
 # Called every frame
 func _process(delta: float):
-	if btn_player1.pressed == true:
-			emit_signal_player1 = true
-	elif btn_player2.pressed == true:
-			emit_signal_player2 = true
-	else:
-		emit_signal_player1 = false
-		emit_signal_player2 = false
-			
+	emit_signal_player1 = btn_player1.pressed
+	emit_signal_player2 = btn_player2.pressed
+
 	update_car_acceleration("Player1", emit_signal_player1)
 	update_car_acceleration("Player2", emit_signal_player2)
 
