@@ -34,7 +34,7 @@ func _on_left_curve(player):
 	race_world.car_in_curve(player, "Left")
 
 # Called every frame
-func _process(delta: float):
+func _process(_delta: float):
 	emit_signal_player1 = btn_player1.pressed
 	emit_signal_player2 = btn_player2.pressed
 

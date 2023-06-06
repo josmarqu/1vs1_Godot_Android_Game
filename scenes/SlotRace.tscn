@@ -522,6 +522,14 @@ rotation = 2.35619
 scale = Vector2( 3.207, 1 )
 shape = SubResource( 5 )
 
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer2D" parent="RaceWorld"]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer2D" parent="RaceWorld"]
+
+[node name="AudioStreamLap" type="AudioStreamPlayer2D" parent="RaceWorld"]
+
+[node name="AudioStreamCrash" type="AudioStreamPlayer2D" parent="RaceWorld"]
+
 [connection signal="body_entered" from="RaceWorld/Curves/Curve1" to="RaceWorld/Curves" method="_on_right_curve_body_entered"]
 [connection signal="body_entered" from="RaceWorld/Curves/Curve2" to="RaceWorld/Curves" method="_on_right_curve_body_entered"]
 [connection signal="body_entered" from="RaceWorld/Curves/Curve3" to="RaceWorld/Curves" method="_on_right_curve_body_entered"]
