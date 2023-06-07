@@ -1,13 +1,251 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://src/images/background_placeholder.jpg" type="Texture" id=1]
+[ext_resource path="res://scenes/Table.tscn" type="PackedScene" id=1]
+[ext_resource path="res://interface/themes/Default.tres" type="Theme" id=2]
+[ext_resource path="res://scripts/HUD.gd" type="Script" id=3]
+[ext_resource path="res://interface/fonts/GADUGI.TTF" type="DynamicFontData" id=4]
+[ext_resource path="res://interface/fonts/LEMONMILK-Medium.otf" type="DynamicFontData" id=5]
 
-[node name="Air Hockey" type="Control"]
+[sub_resource type="DynamicFont" id=1]
+size = 72
+use_filter = true
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 48
+font_data = ExtResource( 4 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "PlayerScore"
+length = 1.2
+tracks/0/type = "bezier"
+tracks/0/path = NodePath(".:rect_scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0, 0.823368, 1, -0.49, 0.00158179, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.2 )
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath(".:rect_scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0, 0.812885, 1, -0.49, -0.00890082, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.2 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath(".:modulate:a")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 0, -0.25, 0, 0, 1.114, 0.977228, -0.25, 0, 0.0383188, -0.0122893, 0, 0, 0.725646, 0.25, 0 ),
+"times": PoolRealArray( 0, 0.8, 1.2 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath(".:rect_rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( -360, -0.25, 0, 0, 361.148, 0, -0.498915, 0.26564, 0.25, 0 ),
+"times": PoolRealArray( 0, 1.2 )
+}
+
+[node name="Main" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+mouse_filter = 2
+theme = ExtResource( 2 )
+script = ExtResource( 3 )
 
-[node name="Background" type="TextureRect" parent="."]
+[node name="Table" parent="." instance=ExtResource( 1 )]
+
+[node name="BlueScore" type="Label" parent="."]
+margin_left = 71.0
+margin_top = 111.0
+margin_right = 162.0
+margin_bottom = 156.0
+custom_colors/font_color = Color( 0.5, 0.75, 1, 1 )
+text = "Blue : 0"
+
+[node name="RedScore" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 1 )
-expand = true
+margin_left = -71.0
+margin_top = -104.0
+margin_right = 14.0
+margin_bottom = -59.0
+rect_rotation = 180.0
+custom_colors/font_color = Color( 1, 0.5, 0.5, 1 )
+text = "Red : 0"
+
+[node name="RedWinsOverlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.533333 )
+
+[node name="RedWinsText" type="VBoxContainer" parent="RedWinsOverlay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+alignment = 1
+
+[node name="GameOver" type="Label" parent="RedWinsOverlay/RedWinsText"]
+margin_top = 447.0
+margin_right = 700.0
+margin_bottom = 555.0
+custom_fonts/font = SubResource( 1 )
+text = "Game Over!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RedWins" type="Label" parent="RedWinsOverlay/RedWinsText"]
+margin_top = 561.0
+margin_right = 700.0
+margin_bottom = 669.0
+custom_colors/font_color = Color( 1, 0.5, 0.5, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Red Wins"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TapToRestart" type="Label" parent="RedWinsOverlay/RedWinsText"]
+margin_top = 675.0
+margin_right = 700.0
+margin_bottom = 752.0
+custom_fonts/font = SubResource( 2 )
+text = "Tap to restart"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlueWinsOverlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+color = Color( 0, 0, 0, 0.533333 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlueWinsText" type="VBoxContainer" parent="BlueWinsOverlay"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOver" type="Label" parent="BlueWinsOverlay/BlueWinsText"]
+margin_top = 447.0
+margin_right = 700.0
+margin_bottom = 555.0
+custom_fonts/font = SubResource( 1 )
+text = "Game Over!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BlueWins" type="Label" parent="BlueWinsOverlay/BlueWinsText"]
+margin_top = 561.0
+margin_right = 700.0
+margin_bottom = 669.0
+custom_colors/font_color = Color( 0.501961, 0.74902, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Blue Wins"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TapToRestart" type="Label" parent="BlueWinsOverlay/BlueWinsText"]
+margin_top = 675.0
+margin_right = 700.0
+margin_bottom = 752.0
+custom_fonts/font = SubResource( 2 )
+text = "Tap to restart"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="TextCenter" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+rect_rotation = -360.0
+rect_scale = Vector2( 1e-05, 1e-05 )
+mouse_filter = 2
+
+[node name="BlueScores" type="Label" parent="TextCenter"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -451.5
+margin_top = -91.5
+margin_right = 451.5
+margin_bottom = 91.5
+custom_colors/font_color = Color( 0.501961, 0.74902, 1, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Blue Scores"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RedScores" type="Label" parent="TextCenter"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -451.5
+margin_top = -91.5
+margin_right = 451.5
+margin_bottom = 91.5
+custom_colors/font_color = Color( 1, 0.5, 0.5, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Red Scores"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScoringAnimation" type="AnimationPlayer" parent="TextCenter"]
+anims/PlayerScore = SubResource( 3 )
+
+[connection signal="blue_scored" from="Table" to="." method="_on_blue_scored"]
+[connection signal="red_scored" from="Table" to="." method="_on_red_scored"]
+[connection signal="animation_finished" from="TextCenter/ScoringAnimation" to="." method="_on_ScoringAnimation_animation_finished"]

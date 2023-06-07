@@ -12,16 +12,24 @@ config_version=4
 
 config/name="1 Vs 1 Godot Android Game"
 run/main_scene="res://scenes/Main.tscn"
-config/icon="res://icon.png"
 
 [display]
 
 window/size/width=700
 window/size/height=1200
+window/size/test_width=400
+window/size/test_height=400
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+pointing/emulate_mouse_from_touch=false
 
 [physics]
 

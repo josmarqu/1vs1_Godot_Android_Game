@@ -1,13 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/images/background_placeholder.jpg" type="Texture" id=1]
 [ext_resource path="res://src/fonts/placeholder_font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://scripts/Minigames.gd" type="Script" id=3]
 
 [node name="Minigames" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-script = ExtResource( 3 )
 
 [node name="Background" type="TextureRect" parent="."]
 anchor_right = 1.0
@@ -15,34 +13,29 @@ anchor_bottom = 1.0
 texture = ExtResource( 1 )
 expand = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = 525.0
-margin_right = -50.0
-margin_bottom = -525.0
-custom_constants/separation = 100
-
-[node name="Race" type="Button" parent="HBoxContainer"]
-margin_right = 133.0
-margin_bottom = 150.0
+[node name="Race" type="Button" parent="."]
+margin_left = 48.0
+margin_top = 496.0
+margin_right = 235.0
+margin_bottom = 700.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 text = "Race"
 
-[node name="Ping Pong" type="Button" parent="HBoxContainer"]
-margin_left = 233.0
-margin_right = 366.0
-margin_bottom = 150.0
+[node name="Ping Pong" type="Button" parent="."]
+margin_left = 265.0
+margin_top = 498.0
+margin_right = 454.0
+margin_bottom = 703.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 text = "Ping Pong"
 
-[node name="Air Hockey" type="Button" parent="HBoxContainer"]
-margin_left = 466.0
-margin_right = 600.0
-margin_bottom = 150.0
+[node name="Air Hockey" type="Button" parent="."]
+margin_left = 481.0
+margin_top = 501.0
+margin_right = 674.0
+margin_bottom = 703.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 2 )
 text = "Air Hockey"
