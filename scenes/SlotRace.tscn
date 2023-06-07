@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://src/images/background_placeholder.jpg" type="Texture" id=1]
 [ext_resource path="res://scripts/SlotRace/Gameplay.gd" type="Script" id=2]
@@ -7,6 +7,25 @@
 [ext_resource path="res://sprites/green_car.png" type="Texture" id=5]
 [ext_resource path="res://scripts/SlotRace/Curves.gd" type="Script" id=6]
 [ext_resource path="res://scripts/SlotRace/SlotRace.gd" type="Script" id=7]
+[ext_resource path="res://src/fonts/ARIAL.TTF" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=15]
+size = 30
+font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.152941, 0.607843, 0.141176, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.27451, 0.227451, 0.227451, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="Curve2D" id=1]
 _data = {
@@ -323,33 +342,116 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 4
 
-[node name="Player1MarginArea" type="MarginContainer" parent="UI/Components"]
+[node name="Control" type="Control" parent="UI/Components"]
 margin_right = 700.0
 margin_bottom = 119.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/margin_top = 15
-custom_constants/margin_left = 30
 
-[node name="Player1ControlPanel" type="HBoxContainer" parent="UI/Components/Player1MarginArea"]
-margin_left = 30.0
-margin_top = 15.0
+[node name="Player1MarginArea" type="MarginContainer" parent="UI/Components/Control"]
+margin_top = 4.0
 margin_right = 700.0
-margin_bottom = 119.0
-size_flags_vertical = 3
-alignment = 1
-
-[node name="Player1Button" type="Button" parent="UI/Components/Player1MarginArea/Player1ControlPanel"]
-margin_right = 133.0
-margin_bottom = 104.0
+margin_bottom = 122.0
+rect_rotation = 180.0
+rect_pivot_offset = Vector2( 350, 59 )
 size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_constants/margin_right = 30
+custom_constants/margin_bottom = 15
 
-[node name="Player1Dashboard" type="HBoxContainer" parent="UI/Components/Player1MarginArea/Player1ControlPanel"]
-margin_left = 137.0
+[node name="Player1ControlPanel" type="HBoxContainer" parent="UI/Components/Control/Player1MarginArea"]
 margin_right = 670.0
-margin_bottom = 104.0
+margin_bottom = 103.0
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Components/Control/Player1MarginArea/Player1ControlPanel"]
+margin_right = 538.0
+margin_bottom = 103.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.48
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Components/Control/Player1MarginArea/Player1ControlPanel/VBoxContainer"]
+margin_right = 538.0
+margin_bottom = 59.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
+custom_constants/margin_right = 126
+custom_constants/margin_top = 24
+custom_constants/margin_left = 145
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Components/Control/Player1MarginArea/Player1ControlPanel/VBoxContainer/MarginContainer"]
+margin_left = 145.0
+margin_top = 24.0
+margin_right = 412.0
+margin_bottom = 59.0
+custom_constants/separation = 83
+
+[node name="RichTextLabel" type="Label" parent="UI/Components/Control/Player1MarginArea/Player1ControlPanel/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 92.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.2
+custom_fonts/font = SubResource( 15 )
+text = "Speed"
+align = 1
+valign = 1
+
+[node name="RichTextLabel2" type="Label" parent="UI/Components/Control/Player1MarginArea/Player1ControlPanel/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 175.0
+margin_right = 267.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.2
+custom_fonts/font = SubResource( 15 )
+text = "Laps"
+align = 1
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Components/Control/Player1MarginArea/Player1ControlPanel/VBoxContainer"]
+margin_top = 63.0
+margin_right = 538.0
+margin_bottom = 98.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Components/Control/Player1MarginArea/Player1ControlPanel/VBoxContainer/MarginContainer2"]
+margin_left = 150.0
+margin_right = 388.0
+margin_bottom = 35.0
+custom_constants/separation = 105
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Components/Control/Player1MarginArea/Player1ControlPanel/VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_right = 91.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_styles/fg = SubResource( 16 )
+custom_styles/bg = SubResource( 17 )
+value = 35.75
+percent_visible = false
+
+[node name="RichTextLabel" type="Label" parent="UI/Components/Control/Player1MarginArea/Player1ControlPanel/VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_left = 196.0
+margin_right = 238.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.2
+custom_fonts/font = SubResource( 15 )
+text = "0/3"
+align = 1
+valign = 1
+
+[node name="Player1Button" type="Button" parent="UI/Components/Control/Player1MarginArea/Player1ControlPanel"]
+margin_left = 542.0
+margin_right = 670.0
+margin_bottom = 103.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 
 [node name="GameWorld" type="HBoxContainer" parent="UI/Components"]
 margin_top = 123.0
@@ -379,17 +481,94 @@ margin_right = 670.0
 margin_bottom = 105.0
 size_flags_vertical = 3
 
-[node name="HBoxContainer" type="HBoxContainer" parent="UI/Components/Player2MarginArea/Player2ControlPanel"]
-margin_right = 532.0
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Components/Player2MarginArea/Player2ControlPanel"]
+margin_right = 538.0
 margin_bottom = 105.0
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 8.48
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/Components/Player2MarginArea/Player2ControlPanel/VBoxContainer"]
+margin_right = 538.0
+margin_bottom = 59.0
+size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
+custom_constants/margin_right = 126
+custom_constants/margin_top = 24
+custom_constants/margin_left = 145
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Components/Player2MarginArea/Player2ControlPanel/VBoxContainer/MarginContainer"]
+margin_left = 145.0
+margin_top = 24.0
+margin_right = 412.0
+margin_bottom = 59.0
+custom_constants/separation = 83
+
+[node name="RichTextLabel" type="Label" parent="UI/Components/Player2MarginArea/Player2ControlPanel/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_right = 92.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.2
+custom_fonts/font = SubResource( 15 )
+text = "Speed"
+align = 1
+valign = 1
+
+[node name="RichTextLabel2" type="Label" parent="UI/Components/Player2MarginArea/Player2ControlPanel/VBoxContainer/MarginContainer/HBoxContainer"]
+margin_left = 175.0
+margin_right = 267.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.2
+custom_fonts/font = SubResource( 15 )
+text = "Laps"
+align = 1
+valign = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/Components/Player2MarginArea/Player2ControlPanel/VBoxContainer"]
+margin_top = 63.0
+margin_right = 538.0
+margin_bottom = 98.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+custom_constants/margin_right = 150
+custom_constants/margin_left = 150
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/Components/Player2MarginArea/Player2ControlPanel/VBoxContainer/MarginContainer2"]
+margin_left = 150.0
+margin_right = 388.0
+margin_bottom = 35.0
+custom_constants/separation = 105
+
+[node name="ProgressBar" type="ProgressBar" parent="UI/Components/Player2MarginArea/Player2ControlPanel/VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_right = 91.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_styles/fg = SubResource( 16 )
+custom_styles/bg = SubResource( 17 )
+value = 35.75
+percent_visible = false
+
+[node name="RichTextLabel" type="Label" parent="UI/Components/Player2MarginArea/Player2ControlPanel/VBoxContainer/MarginContainer2/HBoxContainer"]
+margin_left = 196.0
+margin_right = 238.0
+margin_bottom = 35.0
+size_flags_horizontal = 3
+size_flags_vertical = 5
+size_flags_stretch_ratio = 0.2
+custom_fonts/font = SubResource( 15 )
+text = "0/3"
+align = 1
+valign = 1
 
 [node name="Player2Button" type="Button" parent="UI/Components/Player2MarginArea/Player2ControlPanel"]
-margin_left = 536.0
+margin_left = 542.0
 margin_right = 670.0
 margin_bottom = 105.0
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
 
 [node name="RaceWorld" type="Node2D" parent="."]
 script = ExtResource( 2 )

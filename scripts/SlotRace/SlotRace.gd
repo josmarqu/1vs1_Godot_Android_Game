@@ -1,6 +1,6 @@
 extends Node
 
-onready var btn_player1 = get_node("UI/Components/Player1MarginArea/Player1ControlPanel/Player1Button")
+onready var btn_player1 = get_node("UI/Components/Control/Player1MarginArea/Player1ControlPanel/Player1Button")
 onready var btn_player2 = get_node("UI/Components/Player2MarginArea/Player2ControlPanel/Player2Button")
 onready var race_world = get_node("RaceWorld")
 onready var curves = get_node("RaceWorld/Curves")
