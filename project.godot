@@ -30,8 +30,10 @@ GlobalAttributes="*res://scenes/PingPong/GlobalAttributes.gd"
 
 [display]
 
-window/size/width=720
-window/size/height=1080
+window/size/width=700
+window/size/height=1200
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [editor]
 

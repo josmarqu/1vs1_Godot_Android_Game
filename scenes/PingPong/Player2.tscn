@@ -26,13 +26,13 @@ shape = SubResource( 1 )
 
 [node name="TouchScreenButton" type="TouchScreenButton" parent="."]
 position = Vector2( 360, 0 )
-scale = Vector2( 18, 15 )
+scale = Vector2( 18, 8 )
 shape = SubResource( 2 )
 passby_press = true
 action = "ui_left"
 
 [node name="TouchScreenButton2" type="TouchScreenButton" parent="."]
-scale = Vector2( 18, 15 )
+scale = Vector2( 18, 8 )
 shape = SubResource( 3 )
 passby_press = true
 action = "ui_right"

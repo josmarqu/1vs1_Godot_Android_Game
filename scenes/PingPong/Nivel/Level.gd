@@ -17,21 +17,22 @@ func _on_BottonWall_body_entered(body):
 	
 
 func pj_score():
-	$Ball.position = Vector2(360, 540)
+	$Ball.position = Vector2(366, 599)
 	get_tree().call_group('BallGroup', 'stop_ball')
 	$BallTimer.start()
 	$Countdown.visible = true
 	$PointSound.play()
-	$Player1.position.x = 435
-	$Player2.position.x = 724
+	$Player1.position.x = 438
+	$Player2.position.x = 713
 	
 	if Pj1Score == MaxPoint or Pj2Score == MaxPoint:
 		if Pj1Score == MaxPoint:
 			GlobalAttributes.winner = str(1)
 		else:
 			GlobalAttributes.winner = str(2)
+			
 		go_to_end_screen()
-		$WinnerSound.play()	
+	
 
 
 func go_to_end_screen():

@@ -1,5 +1,5 @@
 extends Node
 
 
-var winner: String
+var winner: String 
 

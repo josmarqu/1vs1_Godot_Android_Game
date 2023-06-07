@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Teko-SemiBold.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://scenes/PingPong/GlobalAttributes.gd" type="Script" id=2]
+[ext_resource path="res://scenes/PingPong/EndScreen.gd" type="Script" id=2]
 [ext_resource path="res://assets/trophy.png" type="Texture" id=3]
+[ext_resource path="res://assets/WinnerBackground.jpg" type="Texture" id=4]
+[ext_resource path="res://assets/WinnerSound.mp3" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 41
@@ -13,20 +15,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 2 )
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
+margin_left = -46.0
+margin_top = -48.0
+margin_right = 54.0
+margin_bottom = 32.0
+texture = ExtResource( 4 )
 
-[node name="Label" type="Label" parent="ColorRect"]
-margin_left = 229.0
-margin_top = 572.0
-margin_right = 487.0
-margin_bottom = 632.0
+[node name="Label" type="Label" parent="."]
+margin_left = 259.0
+margin_top = 614.0
+margin_right = 517.0
+margin_bottom = 674.0
 custom_fonts/font = SubResource( 1 )
 text = "Player %s wins!!!"
 
-[node name="Trophy" type="Sprite" parent="ColorRect"]
+[node name="Trophy" type="Sprite" parent="."]
 position = Vector2( 357, 416 )
 scale = Vector2( 0.108993, 0.0830029 )
 texture = ExtResource( 3 )
+
+[node name="WinnerSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
