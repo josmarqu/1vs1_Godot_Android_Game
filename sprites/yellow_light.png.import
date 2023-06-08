@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/green_car.png-e1e8bbaa065c5613dbf00866a3c6fe7c.stex"
+path="res://.import/yellow_light.png-d75d4100c754312283698f63fa5d2523.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/green_car.png"
-dest_files=[ "res://.import/green_car.png-e1e8bbaa065c5613dbf00866a3c6fe7c.stex" ]
+source_file="res://sprites/yellow_light.png"
+dest_files=[ "res://.import/yellow_light.png-d75d4100c754312283698f63fa5d2523.stex" ]
 
 [params]
 
