@@ -8,7 +8,8 @@ onready var dash_board_player1 = get_node("UI/Components/180°Rotation/Player1Ma
 onready var dash_board_player2 = get_node("UI/Components/Player2MarginArea/Player2ControlPanel/Player2DashBoard")
 onready var animation_player1 = get_node("RaceWorld/Player1Path2D/Player1PathFollow2D/Player1Area2D/BlueCar/AnimationPlayer1")
 onready var animation_player2 = get_node("RaceWorld/Player2Path2D/Player2PathFollow2D/Player2Area2D/GreenCar/AnimationPlayer2")
-onready var start_light = get_node("RaceWorld/Start Light")
+onready var animation_start_light = get_node("RaceWorld/StartLight/AnimationStartLight")
+onready var start_light = get_node("RaceWorld/StartLight")
 onready var audio_race_light_player = get_node("RaceWorld/AudioStreamRaceLight")
 onready var audio_race_start_player = get_node("RaceWorld/AudioStreamRaceStart")
 var race_light_audio = load("res://audio/race_light.mp3")
@@ -48,11 +49,8 @@ func _on_left_curve(player: String):
 
 func _start_light():
 	start_light.position = get_node("UI/Components").rect_size / 2
-	audio_race_light_player.play()
-	yield(get_tree().create_timer(1), "timeout")
-	audio_race_light_player.play()
-	yield(get_tree().create_timer(1), "timeout")
-	audio_race_start_player.play()
+	animation_start_light.play("countdown")
+	yield(animation_start_light, "animation_finished")
 	start_light.visible = false
 	race_world.run_car("Player1")
 	race_world.run_car("Player2")

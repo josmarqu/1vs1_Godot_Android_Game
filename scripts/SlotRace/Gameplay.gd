@@ -91,7 +91,7 @@ func car_in_curve(player: String, pos: String):
 				green_car_animation.play("DerailLeft")
 
 # Called every frame
-func _process(_delta: float):
+func _physics_process(_delta):
 	if blue_car_running:
 		var blue_car_result = update_car(blue_car, blue_car_speed, blue_car_prev_offset, blue_car_laps)
 		blue_car_prev_offset = blue_car_result[0]

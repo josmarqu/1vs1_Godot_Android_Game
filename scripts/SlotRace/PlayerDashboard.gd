@@ -11,8 +11,5 @@ func update_progress_bar(speed: float):
 	var percentage: float = (speed * 100 / 0.6) * 100
 	progress_bar_player.value = percentage
 	
-	if speed > 0.4:
-		pass # TO DO
-
 func update_laps_indicator(lap: int):
 	laps_indicator.text = str(lap) + "/3"
