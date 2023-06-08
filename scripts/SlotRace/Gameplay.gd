@@ -1,9 +1,11 @@
 extends Node2D
 
-const LAP_TARGET = 3
+const LAP_TARGET: int = 3
+const CAR_ACCELERATION: float = 0.001
+const CAR_DECELERATION: float = 0.00025
+const CAR_MAX_SPEED: float = 0.005
+const CAR_DERAIL_SPEED: float = 0.004
 
-var blue_car_speed: float = 0
-var green_car_speed: float = 0
 onready var audioGameLap = get_node("AudioStreamLap")
 onready var audioGameCrash = get_node("AudioStreamCrash")
 onready var audioPlayer1 = get_node("AudioStreamPlayer1")
@@ -12,12 +14,14 @@ onready var blue_car = get_node("Player1Path2D/Player1PathFollow2D")
 onready var green_car = get_node("Player2Path2D/Player2PathFollow2D")
 onready var blue_car_animation = get_node("Player1Path2D/Player1PathFollow2D/Player1Area2D/BlueCar/AnimationPlayer1")
 onready var green_car_animation = get_node("Player2Path2D/Player2PathFollow2D/Player2Area2D/GreenCar/AnimationPlayer2")
-var blue_car_laps: int = 0
-var green_car_laps: int = 0
+export var blue_car_speed: float = 0
+export var green_car_speed: float = 0
+export var blue_car_laps: int = 0
+export var green_car_laps: int = 0
 var blue_car_prev_offset: float = 0
 var green_car_prev_offset: float = 0
-var blue_car_running = true
-var green_car_running = true
+var blue_car_running: bool = true
+var green_car_running: bool = true
 var lap_finished_audio = load("res://audio/lap_finished.mp3")
 var car_running_audio = load("res://audio/car_running.mp3")
 var car_crash_audio = load("res://audio/car_crash.mp3")
@@ -32,23 +36,23 @@ func _ready():
 	audioPlayer2.stream = car_running_audio
 
 func accelerate(player: String):
-	if player == "Player1" and blue_car_speed <= 0.005:
-		blue_car_speed += 0.001
+	if player == "Player1" and blue_car_speed <= CAR_MAX_SPEED:
+		blue_car_speed += CAR_ACCELERATION
 		audioPlayer1.playing = true
-	elif player == "Player2" and green_car_speed <= 0.005:
-		green_car_speed += 0.001
+	elif player == "Player2" and green_car_speed <= CAR_MAX_SPEED:
+		green_car_speed += CAR_ACCELERATION
 		audioPlayer2.playing = true
 
 func stop_accelerate(player: String):
 	if player == "Player1":
 		if blue_car_speed > 0:
-			blue_car_speed -= 0.00025
+			blue_car_speed -= CAR_DECELERATION
 		else:
 			blue_car_speed = 0
 			audioPlayer1.playing = false
 	elif player == "Player2":
 		if green_car_speed > 0:
-			green_car_speed -= 0.00025
+			green_car_speed -= CAR_DECELERATION
 		else:
 			green_car_speed = 0
 			audioPlayer2.playing = false
@@ -69,7 +73,7 @@ func run_car(player: String):
 
 func car_in_curve(player: String, pos: String):
 	if player == "Player1":
-		if blue_car_speed > 0.004:
+		if blue_car_speed > CAR_DERAIL_SPEED:
 			audioGameCrash.play()
 			stop_car("Player1")
 			if pos == "Right":
@@ -78,7 +82,7 @@ func car_in_curve(player: String, pos: String):
 				blue_car_animation.play("DerailLeft")
 
 	if player == "Player2":
-		if green_car_speed > 0.004:
+		if green_car_speed > CAR_DERAIL_SPEED:
 			audioGameCrash.play()
 			stop_car("Player2")
 			if pos == "Right":
@@ -105,7 +109,7 @@ func _process(_delta: float):
 			print("Player 2 Win")
 		set_process(false)
 
-func update_car(car, car_speed, prev_offset, car_laps):
+func update_car(car, car_speed: float, prev_offset: float, car_laps: int):
 	var current_offset = car.unit_offset
 	car.unit_offset += car_speed
 	if current_offset < prev_offset:
@@ -114,3 +118,14 @@ func update_car(car, car_speed, prev_offset, car_laps):
 	prev_offset = current_offset
 	return [prev_offset, car_laps]
 
+func get_blue_car_speed():
+	return blue_car_speed
+
+func get_green_car_speed():
+	return green_car_speed
+
+func get_blue_car_lap():
+	return blue_car_laps
+
+func get_green_car_lap():
+	return green_car_laps
