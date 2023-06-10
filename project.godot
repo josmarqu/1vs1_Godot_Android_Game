@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="1 Vs 1 Godot Android Game"
-run/main_scene="res://scenes/Main.tscn"
+run/main_scene="res://scenes/Home.tscn"
 config/icon="res://icon.png"
 
 [display]
