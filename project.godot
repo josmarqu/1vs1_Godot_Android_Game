@@ -14,14 +14,21 @@ config/name="1 Vs 1 Godot Android Game"
 run/main_scene="res://scenes/Home.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global="*res://scripts/global.gd"
+
 [display]
 
 window/size/width=700
 window/size/height=1200
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+theme/custom="res://GameTheme.tres"
 
 [physics]
 
