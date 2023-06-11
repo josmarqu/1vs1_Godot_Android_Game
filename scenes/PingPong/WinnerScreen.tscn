@@ -30,7 +30,7 @@ margin_top = 614.0
 margin_right = 517.0
 margin_bottom = 674.0
 custom_fonts/font = SubResource( 1 )
-text = "Player %s wins!!!"
+text = "Player 1 %s wins!!!"
 
 [node name="Trophy" type="Sprite" parent="."]
 position = Vector2( 357, 416 )
