@@ -1,13 +1,13 @@
 extends Node
 
-onready var btn_player1 = get_node("UI/Components/180°Rotation/Player1MarginArea/Player1ControlPanel/Player1Button")
-onready var btn_player2 = get_node("UI/Components/Player2MarginArea/Player2ControlPanel/Player2Button")
+onready var btn_player1 = get_node("UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1Button")
+onready var btn_player2 = get_node("UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2Button")
 onready var race_world = get_node("RaceWorld")
 onready var curves = get_node("RaceWorld/Curves")
-onready var dash_board_player1 = get_node("UI/Components/180°Rotation/Player1MarginArea/Player1ControlPanel/Player1DashBoard")
-onready var dash_board_player2 = get_node("UI/Components/Player2MarginArea/Player2ControlPanel/Player2DashBoard")
+onready var dash_board_player1 = get_node("UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard")
+onready var dash_board_player2 = get_node("UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard")
 onready var animation_player1 = get_node("RaceWorld/Player1Path2D/Player1PathFollow2D/Player1Area2D/BlueCar/AnimationPlayer1")
-onready var animation_player2 = get_node("RaceWorld/Player2Path2D/Player2PathFollow2D/Player2Area2D/GreenCar/AnimationPlayer2")
+onready var animation_player2 = get_node("RaceWorld/Player2Path2D/Player2PathFollow2D/Player2Area2D/RedCar/AnimationPlayer2")
 onready var animation_start_light = get_node("RaceWorld/StartLight/AnimationStartLight")
 onready var start_light = get_node("RaceWorld/StartLight")
 onready var audio_race_light_player = get_node("RaceWorld/AudioStreamRaceLight")
@@ -69,8 +69,8 @@ func _process(_delta: float):
 	dash_board_player1.update_progress_bar(race_world.get_blue_car_speed())
 	dash_board_player1.update_laps_indicator(race_world.get_blue_car_lap())
 	
-	dash_board_player2.update_progress_bar(race_world.get_green_car_speed())
-	dash_board_player2.update_laps_indicator(race_world.get_green_car_lap())
+	dash_board_player2.update_progress_bar(race_world.get_red_car_speed())
+	dash_board_player2.update_laps_indicator(race_world.get_red_car_lap())
 
 func update_car_acceleration(player: String, emit_signal: bool):
 	if emit_signal:
