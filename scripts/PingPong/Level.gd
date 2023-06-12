@@ -12,7 +12,11 @@ func _on_TopWall_body_entered(body):
 	Pj1Score += 1
 	pj_score()
 	
-
+func _ready():
+	$Ball.position = Vector2(700 / 2, 1200 / 2)
+	$BallTimer.start()
+	$Countdown.visible = true
+	
 	
 func _on_BottonWall_body_entered(body):
 	Pj2Score += 1
@@ -29,12 +33,13 @@ func _process(delta):
 		
 func pj_score():
 	$Ball.position = Vector2(700 / 2, 1200 / 2)
-	get_tree().call_group('BallGroup', 'stop_ball')
 	$BallTimer.start()
+	get_tree().call_group('BallGroup', 'stop_ball')
 	$Countdown.visible = true
 	$PointSound.play()
 	$Player1.position.x = 438
 	$Player2.position.x = 713
+	
 
 
 	if Pj1Score == MaxPoint or Pj2Score == MaxPoint:
@@ -47,6 +52,7 @@ func pj_score():
 	
 
 func _on_BallTimer_timeout():
+	$Ball.position = Vector2(700 / 2, 1200 / 2)
 	get_tree().call_group('BallGroup','restart_ball')
 	$Countdown.visible = false
 
