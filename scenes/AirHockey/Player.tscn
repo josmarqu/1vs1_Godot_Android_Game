@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sprites/AirHockey/Handle.png" type="Texture" id=1]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 42.0
+
+[node name="Player" type="KinematicBody2D"]
+
+[node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Handle" type="Sprite" parent="."]
+texture = ExtResource( 1 )

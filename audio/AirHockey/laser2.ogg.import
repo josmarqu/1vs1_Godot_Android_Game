@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/laser2.ogg-5f2a141048a84404522cb4e611f2da62.oggstr"
+
+[deps]
+
+source_file="res://audio/AirHockey/laser2.ogg"
+dest_files=[ "res://.import/laser2.ogg-5f2a141048a84404522cb4e611f2da62.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

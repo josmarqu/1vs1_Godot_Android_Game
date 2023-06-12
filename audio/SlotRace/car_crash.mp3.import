@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/car_crash.mp3-8b97b9907ea0199bcecff377a8707e80.mp3str"
+
+[deps]
+
+source_file="res://audio/SlotRace/car_crash.mp3"
+dest_files=[ "res://.import/car_crash.mp3-8b97b9907ea0199bcecff377a8707e80.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

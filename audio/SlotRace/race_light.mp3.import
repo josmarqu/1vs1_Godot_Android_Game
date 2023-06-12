@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/race_light.mp3-10988626e7b2b871442af9878ceb4a4f.mp3str"
+
+[deps]
+
+source_file="res://audio/SlotRace/race_light.mp3"
+dest_files=[ "res://.import/race_light.mp3-10988626e7b2b871442af9878ceb4a4f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
