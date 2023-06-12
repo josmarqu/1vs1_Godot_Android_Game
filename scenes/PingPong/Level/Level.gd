@@ -16,8 +16,6 @@ func _on_BottonWall_body_entered(body):
 	Pj1Score += 1
 	pj_score()
 	
-
-
 func go_to_end_screen():
 	get_tree().change_scene_to(EndScreenScene)
 	
