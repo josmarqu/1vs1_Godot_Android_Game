@@ -501,17 +501,17 @@ margin_right = 670.0
 margin_bottom = 92.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
-custom_constants/margin_right = 150
+custom_constants/margin_right = 176
 custom_constants/margin_left = 150
 
 [node name="Stats" type="HBoxContainer" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard/MarginContainer2"]
 margin_left = 150.0
-margin_right = 520.0
+margin_right = 494.0
 margin_bottom = 39.0
-custom_constants/separation = 90
+custom_constants/separation = 144
 
 [node name="ProgressBar" type="ProgressBar" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard/MarginContainer2/Stats"]
-margin_right = 226.0
+margin_right = 146.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -520,8 +520,8 @@ custom_styles/bg = SubResource( 17 )
 percent_visible = false
 
 [node name="LapsIndicator" type="Label" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard/MarginContainer2/Stats"]
-margin_left = 316.0
-margin_right = 370.0
+margin_left = 290.0
+margin_right = 344.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -644,19 +644,19 @@ margin_bottom = 97.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 4.0
-custom_constants/margin_right = 150
+custom_constants/margin_right = 176
 custom_constants/margin_left = 150
 
 [node name="Stats" type="HBoxContainer" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard/MarginContainer2"]
 margin_left = 150.0
-margin_right = 520.0
+margin_right = 494.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-custom_constants/separation = 90
+custom_constants/separation = 144
 
 [node name="ProgressBar" type="ProgressBar" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard/MarginContainer2/Stats"]
-margin_right = 226.0
+margin_right = 146.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -665,8 +665,8 @@ custom_styles/bg = SubResource( 17 )
 percent_visible = false
 
 [node name="LapsIndicator" type="Label" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard/MarginContainer2/Stats"]
-margin_left = 316.0
-margin_right = 370.0
+margin_left = 290.0
+margin_right = 344.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3

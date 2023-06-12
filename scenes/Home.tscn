@@ -42,10 +42,9 @@ margin_bottom = 421.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="TextureRect" type="TextureRect" parent="Components/LogoContainer/Control"]
-margin_right = 1163.0
-margin_bottom = 673.0
-rect_scale = Vector2( 0.6, 0.6 )
+[node name="Logo" type="TextureRect" parent="Components/LogoContainer/Control"]
+margin_right = 703.0
+margin_bottom = 410.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 1 )
