@@ -60,8 +60,9 @@ func _start_light():
 # Called every frame
 func _process(_delta: float):
 	# Change boolean value depending on the buttons state
-	emit_signal_player1 = btn_player1.pressed
-	emit_signal_player2 = btn_player2.pressed
+	emit_signal_player1 = btn_player1.is_pressed()
+	emit_signal_player2 = btn_player2.is_pressed()
+	
 
 	# Increase or reduce the car accelaration depending on the buttons state
 	update_car_acceleration("Player1", emit_signal_player1)

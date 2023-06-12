@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://fonts/Teko-SemiBold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://audio/PingPong/score_sound.mp3" type="AudioStream" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://scenes/PingPong/Ball.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/PingPong/Player2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scripts/PingPong/Level.gd" type="Script" id=7]
+[ext_resource path="res://icons/gray_pause_button.png" type="Texture" id=8]
 
 [sub_resource type="DynamicFont" id=3]
 size = 40
@@ -28,26 +29,30 @@ extents = Vector2( 11.125, 599.125 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 7 )
+MaxPoint = 2
 
 [node name="ColorRect" type="TextureRect" parent="."]
+margin_top = 1.0
 margin_right = 700.0
-margin_bottom = 1200.0
+margin_bottom = 1201.0
 texture = ExtResource( 3 )
 
 [node name="Pj1Score" type="Label" parent="."]
-margin_left = 674.0
-margin_top = 506.0
-margin_right = 692.0
-margin_bottom = 625.0
+margin_left = 681.0
+margin_top = 709.0
+margin_right = 699.0
+margin_bottom = 828.0
+rect_rotation = 180.0
 custom_fonts/font = SubResource( 3 )
 text = "0
 "
 
 [node name="Pj2Score" type="Label" parent="."]
-margin_left = 673.0
-margin_top = 646.0
-margin_right = 687.0
-margin_bottom = 690.0
+margin_left = 681.0
+margin_top = 557.0
+margin_right = 699.0
+margin_bottom = 615.0
+rect_rotation = 180.0
 custom_fonts/font = SubResource( 4 )
 text = "0"
 
@@ -108,6 +113,18 @@ one_shot = true
 [node name="PointSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 
+[node name="PauseLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseButton" type="TextureButton" parent="."]
+margin_left = 50.0
+margin_top = 649.0
+margin_right = 300.0
+margin_bottom = 1149.0
+rect_rotation = 180.0
+rect_scale = Vector2( 0.2, 0.2 )
+texture_normal = ExtResource( 8 )
+
 [connection signal="body_entered" from="TopWall" to="." method="_on_TopWall_body_entered"]
 [connection signal="body_entered" from="BottonWall" to="." method="_on_BottonWall_body_entered"]
 [connection signal="timeout" from="BallTimer" to="." method="_on_BallTimer_timeout"]
+[connection signal="pressed" from="PauseButton" to="." method="_on_PauseButton_pressed"]

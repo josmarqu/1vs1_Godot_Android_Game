@@ -276,7 +276,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 6 )
 
-[node name="Label" type="Label" parent="Components/Score&Play/Background/HBoxContainer/Control/RedScore"]
+[node name="RedScore" type="Label" parent="Components/Score&Play/Background/HBoxContainer/Control/RedScore"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 3
@@ -311,7 +311,7 @@ margin_bottom = 210.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RedScore" type="TextureRect" parent="Components/Score&Play/Background/HBoxContainer/Control3"]
+[node name="BlueScore" type="TextureRect" parent="Components/Score&Play/Background/HBoxContainer/Control3"]
 margin_left = 4.0
 margin_right = 504.0
 margin_bottom = 500.0
@@ -320,7 +320,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 texture = ExtResource( 12 )
 
-[node name="Label" type="Label" parent="Components/Score&Play/Background/HBoxContainer/Control3/RedScore"]
+[node name="BlueScore" type="Label" parent="Components/Score&Play/Background/HBoxContainer/Control3/BlueScore"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_bottom = 15.0
@@ -335,4 +335,5 @@ valign = 2
 [connection signal="pressed" from="Components/Buttons/Control2/PingPongButton" to="." method="_on_PingPongButton_pressed"]
 [connection signal="pressed" from="Components/Buttons/Control3/SlotRaceButton" to="." method="_on_SlotRaceButton_pressed"]
 [connection signal="pressed" from="Components/GoBack&FinishGame/Control/GoBackButton" to="." method="_on_GoBackButton_pressed"]
+[connection signal="pressed" from="Components/GoBack&FinishGame/Control2/FinishCountButton" to="." method="_on_FinishCountButton_pressed"]
 [connection signal="pressed" from="Components/Score&Play/Background/HBoxContainer/Control2/PlayButton" to="." method="_on_PlayButton_pressed"]

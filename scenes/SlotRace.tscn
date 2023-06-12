@@ -14,7 +14,6 @@
 [ext_resource path="res://sprites/SlotRace/red_light.png" type="Texture" id=12]
 [ext_resource path="res://icons/gray_pause_button.png" type="Texture" id=13]
 
-
 [sub_resource type="DynamicFont" id=15]
 size = 30
 font_data = ExtResource( 5 )
@@ -451,14 +450,14 @@ margin_bottom = 103.0
 size_flags_vertical = 3
 
 [node name="Player1DashBoard" type="VBoxContainer" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel"]
-margin_right = 565.0
+margin_right = 670.0
 margin_bottom = 93.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 8.48
 script = ExtResource( 9 )
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard"]
-margin_right = 565.0
+margin_right = 670.0
 margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
@@ -469,12 +468,12 @@ custom_constants/margin_left = 145
 [node name="Text" type="HBoxContainer" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard/MarginContainer"]
 margin_left = 145.0
 margin_top = 10.0
-margin_right = 439.0
+margin_right = 544.0
 margin_bottom = 49.0
 custom_constants/separation = 83
 
 [node name="RichTextLabel" type="Label" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard/MarginContainer/Text"]
-margin_right = 105.0
+margin_right = 158.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -485,8 +484,8 @@ align = 1
 valign = 1
 
 [node name="RichTextLabel2" type="Label" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard/MarginContainer/Text"]
-margin_left = 188.0
-margin_right = 294.0
+margin_left = 241.0
+margin_right = 399.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -498,7 +497,7 @@ valign = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard"]
 margin_top = 53.0
-margin_right = 565.0
+margin_right = 670.0
 margin_bottom = 92.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 4.0
@@ -507,12 +506,12 @@ custom_constants/margin_left = 150
 
 [node name="Stats" type="HBoxContainer" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard/MarginContainer2"]
 margin_left = 150.0
-margin_right = 415.0
+margin_right = 520.0
 margin_bottom = 39.0
 custom_constants/separation = 90
 
 [node name="ProgressBar" type="ProgressBar" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard/MarginContainer2/Stats"]
-margin_right = 121.0
+margin_right = 226.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 1
@@ -521,8 +520,8 @@ custom_styles/bg = SubResource( 17 )
 percent_visible = false
 
 [node name="LapsIndicator" type="Label" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel/Player1DashBoard/MarginContainer2/Stats"]
-margin_left = 211.0
-margin_right = 265.0
+margin_left = 316.0
+margin_right = 370.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -532,14 +531,10 @@ text = "0/3"
 align = 1
 valign = 1
 
-[node name="Player1Button" type="TextureButton" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel"]
-margin_left = 569.0
-margin_right = 670.0
-margin_bottom = 93.0
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 1.5
-texture_normal = ExtResource( 8 )
-expand = true
+[node name="Player1Button" type="TouchScreenButton" parent="UI/Components/Player1/Player1MarginArea/Player1ControlPanel"]
+position = Vector2( 557, 6 )
+scale = Vector2( 0.20337, 0.184492 )
+normal = ExtResource( 8 )
 
 [node name="GameWorld" type="HBoxContainer" parent="UI/Components"]
 margin_top = 123.0
@@ -596,14 +591,14 @@ margin_bottom = 105.0
 size_flags_vertical = 3
 
 [node name="Player2DashBoard" type="VBoxContainer" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel"]
-margin_right = 565.0
+margin_right = 670.0
 margin_bottom = 97.0
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 8.48
 script = ExtResource( 9 )
 
 [node name="MarginContainer" type="MarginContainer" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard"]
-margin_right = 565.0
+margin_right = 670.0
 margin_bottom = 49.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -615,12 +610,12 @@ custom_constants/margin_left = 145
 [node name="Text" type="HBoxContainer" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard/MarginContainer"]
 margin_left = 145.0
 margin_top = 10.0
-margin_right = 439.0
+margin_right = 544.0
 margin_bottom = 49.0
 custom_constants/separation = 83
 
 [node name="RichTextLabel" type="Label" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard/MarginContainer/Text"]
-margin_right = 105.0
+margin_right = 158.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -631,8 +626,8 @@ align = 1
 valign = 1
 
 [node name="RichTextLabel2" type="Label" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard/MarginContainer/Text"]
-margin_left = 188.0
-margin_right = 294.0
+margin_left = 241.0
+margin_right = 399.0
 margin_bottom = 39.0
 size_flags_horizontal = 3
 size_flags_vertical = 5
@@ -644,7 +639,7 @@ valign = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard"]
 margin_top = 53.0
-margin_right = 565.0
+margin_right = 670.0
 margin_bottom = 97.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -654,14 +649,14 @@ custom_constants/margin_left = 150
 
 [node name="Stats" type="HBoxContainer" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard/MarginContainer2"]
 margin_left = 150.0
-margin_right = 415.0
+margin_right = 520.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_constants/separation = 90
 
 [node name="ProgressBar" type="ProgressBar" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard/MarginContainer2/Stats"]
-margin_right = 121.0
+margin_right = 226.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -670,8 +665,8 @@ custom_styles/bg = SubResource( 17 )
 percent_visible = false
 
 [node name="LapsIndicator" type="Label" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel/Player2DashBoard/MarginContainer2/Stats"]
-margin_left = 211.0
-margin_right = 265.0
+margin_left = 316.0
+margin_right = 370.0
 margin_bottom = 44.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -681,15 +676,10 @@ text = "0/3"
 align = 1
 valign = 1
 
-[node name="Player2Button" type="TextureButton" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel"]
-margin_left = 569.0
-margin_right = 670.0
-margin_bottom = 97.0
-size_flags_horizontal = 3
-size_flags_vertical = 3
-size_flags_stretch_ratio = 1.5
-texture_normal = ExtResource( 8 )
-expand = true
+[node name="Player2Button" type="TouchScreenButton" parent="UI/Components/Player2/Player2MarginArea/Player2ControlPanel"]
+position = Vector2( 566, 7 )
+scale = Vector2( 0.2, 0.188 )
+normal = ExtResource( 8 )
 
 [node name="RaceWorld" type="Node2D" parent="."]
 script = ExtResource( 2 )

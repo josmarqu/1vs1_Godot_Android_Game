@@ -5,6 +5,7 @@ const CAR_ACCELERATION: float = 0.001
 const CAR_DECELERATION: float = 0.00025
 const CAR_MAX_SPEED: float = 0.005
 const CAR_DERAIL_SPEED: float = 0.004
+const EndScreenScene = preload("res://scenes/EndScreen.tscn")
 
 onready var audio_game_lap = get_node("AudioStreamLap")
 onready var audio_game_crash = get_node("AudioStreamCrash")
@@ -104,10 +105,14 @@ func _physics_process(_delta):
 		blue_car_running = false
 		red_car_running = false
 		if blue_car_laps == LAP_TARGET:
-			print("Player 1 Win")
+			GlobalAttributes.winner = "Blue"
 		elif red_car_laps == LAP_TARGET:
-			print("Player 2 Win")
+			GlobalAttributes.winner = "Red"	
+		go_to_end_screen()
 		set_process(false)
+
+func go_to_end_screen():
+	get_tree().change_scene_to(EndScreenScene)		
 
 func update_car(car, car_speed: float, prev_offset: float, car_laps: int):
 	var current_offset = car.unit_offset
