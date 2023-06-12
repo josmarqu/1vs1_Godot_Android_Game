@@ -132,3 +132,4 @@ stretch_mode = 3
 [connection signal="pressed" from="Components/Control/PlayButton" to="." method="_on_PlayButton_pressed"]
 [connection signal="pressed" from="Components/Control2/MusicButton" to="." method="_on_MusicButton_pressed"]
 [connection signal="pressed" from="Components/Control3/SpeakerButton" to="." method="_on_SpeakerButton_pressed"]
+[connection signal="pressed" from="Components/Control4/GoBackButton" to="." method="_on_GoBackButton_pressed"]

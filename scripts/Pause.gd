@@ -24,3 +24,9 @@ func _on_MusicButton_pressed():
 
 func _on_SpeakerButton_pressed():
 	AudioServer.set_bus_mute(global_sound, not AudioServer.is_bus_mute(global_sound))
+
+func _on_GoBackButton_pressed():
+	get_tree().paused = false
+	emit_signal("p")
+	self.queue_free()
+	get_tree().change_scene("res://scenes/GameSelector.tscn")
