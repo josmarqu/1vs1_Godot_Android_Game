@@ -1,0 +1,113 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://fonts/Teko-SemiBold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://audio/PingPong/score_sound.mp3" type="AudioStream" id=2]
+[ext_resource path="res://sprites/PingPong/LevelBackground.jpg" type="Texture" id=3]
+[ext_resource path="res://scenes/PingPong/Player1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/PingPong/Ball.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/PingPong/Player2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scripts/PingPong/Level.gd" type="Script" id=7]
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 50
+font_data = ExtResource( 1 )
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 350.75, 23 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 11.125, 599.125 )
+
+[node name="Level" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="ColorRect" type="TextureRect" parent="."]
+margin_right = 700.0
+margin_bottom = 1200.0
+texture = ExtResource( 3 )
+
+[node name="Pj1Score" type="Label" parent="."]
+margin_left = 674.0
+margin_top = 506.0
+margin_right = 692.0
+margin_bottom = 625.0
+custom_fonts/font = SubResource( 3 )
+text = "0
+"
+
+[node name="Pj2Score" type="Label" parent="."]
+margin_left = 673.0
+margin_top = 646.0
+margin_right = 687.0
+margin_bottom = 690.0
+custom_fonts/font = SubResource( 4 )
+text = "0"
+
+[node name="Countdown" type="Label" parent="."]
+visible = false
+margin_left = 350.0
+margin_top = 496.0
+margin_right = 373.0
+margin_bottom = 643.0
+custom_colors/font_color = Color( 1, 0.678431, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "0
+"
+
+[node name="Player1" parent="." instance=ExtResource( 4 )]
+position = Vector2( 438, -290 )
+rotation = 1.5708
+
+[node name="Player2" parent="." instance=ExtResource( 6 )]
+position = Vector2( 713, 1196 )
+rotation = 3.14159
+
+[node name="TopWall" type="Area2D" parent="."]
+position = Vector2( 44, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
+position = Vector2( 306, 3 )
+shape = SubResource( 1 )
+
+[node name="BottonWall" type="Area2D" parent="."]
+position = Vector2( 46, -27 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottonWall"]
+position = Vector2( 306.25, 1251 )
+shape = SubResource( 1 )
+
+[node name="Ball" parent="." instance=ExtResource( 5 )]
+position = Vector2( 366, 602 )
+
+[node name="LeftWall" type="StaticBody2D" parent="."]
+position = Vector2( -116, 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
+position = Vector2( 104, 594 )
+shape = SubResource( 2 )
+
+[node name="RightWall" type="StaticBody2D" parent="."]
+position = Vector2( 235, 15 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
+position = Vector2( 476, 585.125 )
+shape = SubResource( 2 )
+
+[node name="BallTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="PointSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+
+[connection signal="body_entered" from="TopWall" to="." method="_on_TopWall_body_entered"]
+[connection signal="body_entered" from="BottonWall" to="." method="_on_BottonWall_body_entered"]
+[connection signal="timeout" from="BallTimer" to="." method="_on_BallTimer_timeout"]

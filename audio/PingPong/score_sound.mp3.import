@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/score_sound.mp3-289022395068feb741aa62890cb9248b.mp3str"
+
+[deps]
+
+source_file="res://audio/PingPong/score_sound.mp3"
+dest_files=[ "res://.import/score_sound.mp3-289022395068feb741aa62890cb9248b.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

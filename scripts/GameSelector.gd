@@ -25,7 +25,7 @@ func _on_GoBackButton_pressed():
 
 func _on_PlayButton_pressed():
 	if ping_pong_btn.pressed == true:
-		get_tree().change_scene("res://scenes/PingPong.tscn")
+		get_tree().change_scene("res://scenes/PingPong/Level.tscn")
 	elif slot_race_btn.pressed == true:
 		get_tree().change_scene("res://scenes/SlotRace.tscn")
 	elif air_hockey_btn.pressed == true:

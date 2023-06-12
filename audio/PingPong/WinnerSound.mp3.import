@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/WinnerSound.mp3-a8b56665586641d823b7269f1af983c2.mp3str"
+
+[deps]
+
+source_file="res://audio/PingPong/WinnerSound.mp3"
+dest_files=[ "res://.import/WinnerSound.mp3-a8b56665586641d823b7269f1af983c2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

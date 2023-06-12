@@ -1,18 +1,19 @@
 [gd_scene load_steps=32 format=2]
 
-[ext_resource path="res://sprites/red_car.png" type="Texture" id=1]
+[ext_resource path="res://sprites/SlotRace/red_car.png" type="Texture" id=1]
 [ext_resource path="res://scripts/SlotRace/Gameplay.gd" type="Script" id=2]
-[ext_resource path="res://sprites/blue_car.png" type="Texture" id=3]
-[ext_resource path="res://sprites/circuit.png" type="Texture" id=4]
+[ext_resource path="res://sprites/SlotRace/blue_car.png" type="Texture" id=3]
+[ext_resource path="res://sprites/SlotRace/circuit.png" type="Texture" id=4]
 [ext_resource path="res://fonts/Sora/static/Sora-SemiBold.ttf" type="DynamicFontData" id=5]
 [ext_resource path="res://scripts/SlotRace/Curves.gd" type="Script" id=6]
 [ext_resource path="res://scripts/SlotRace/SlotRace.gd" type="Script" id=7]
 [ext_resource path="res://icons/gray_button.png" type="Texture" id=8]
 [ext_resource path="res://scripts/SlotRace/PlayerDashboard.gd" type="Script" id=9]
-[ext_resource path="res://sprites/green_light.png" type="Texture" id=10]
-[ext_resource path="res://sprites/yellow_light.png" type="Texture" id=11]
-[ext_resource path="res://sprites/red_light.png" type="Texture" id=12]
+[ext_resource path="res://sprites/SlotRace/green_light.png" type="Texture" id=10]
+[ext_resource path="res://sprites/SlotRace/yellow_light.png" type="Texture" id=11]
+[ext_resource path="res://sprites/SlotRace/red_light.png" type="Texture" id=12]
 [ext_resource path="res://icons/gray_pause_button.png" type="Texture" id=13]
+
 
 [sub_resource type="DynamicFont" id=15]
 size = 30

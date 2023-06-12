@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/green_light.png-d9e85f7c69c49bc88d8f6ab5d837e1dc.stex"
+path="res://.import/yellow_light.png-a641684ea7421e7076489eb62d835542.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/green_light.png"
-dest_files=[ "res://.import/green_light.png-d9e85f7c69c49bc88d8f6ab5d837e1dc.stex" ]
+source_file="res://sprites/SlotRace/yellow_light.png"
+dest_files=[ "res://.import/yellow_light.png-a641684ea7421e7076489eb62d835542.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/yellow_light.png-d75d4100c754312283698f63fa5d2523.stex"
+path="res://.import/LevelBackground.jpg-aa6d289f1556bb75c66aaf5eac3b93b5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/yellow_light.png"
-dest_files=[ "res://.import/yellow_light.png-d75d4100c754312283698f63fa5d2523.stex" ]
+source_file="res://sprites/PingPong/LevelBackground.jpg"
+dest_files=[ "res://.import/LevelBackground.jpg-aa6d289f1556bb75c66aaf5eac3b93b5.stex" ]
 
 [params]
 

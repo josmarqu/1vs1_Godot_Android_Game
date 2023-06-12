@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/red_car.png-0ca6abc3025937802ed395083a2c1999.stex"
+path="res://.import/Player 2.png-808439df5d0cb4a034a3a976684b0496.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/red_car.png"
-dest_files=[ "res://.import/red_car.png-0ca6abc3025937802ed395083a2c1999.stex" ]
+source_file="res://sprites/PingPong/Player 2.png"
+dest_files=[ "res://.import/Player 2.png-808439df5d0cb4a034a3a976684b0496.stex" ]
 
 [params]
 
