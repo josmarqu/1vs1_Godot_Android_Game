@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/race_light.mp3-ea35c8808f3bbe36bc974ef1c1a0a8c5.mp3str"
+
+[deps]
+
+source_file="res://audio/race_light.mp3"
+dest_files=[ "res://.import/race_light.mp3-ea35c8808f3bbe36bc974ef1c1a0a8c5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
