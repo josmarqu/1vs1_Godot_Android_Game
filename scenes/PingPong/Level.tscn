@@ -29,7 +29,7 @@ extents = Vector2( 11.125, 599.125 )
 
 [node name="Level" type="Node2D"]
 script = ExtResource( 7 )
-MaxPoint = 2
+MaxPoint = 3
 
 [node name="ColorRect" type="TextureRect" parent="."]
 margin_top = 1.0
