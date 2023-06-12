@@ -14,8 +14,8 @@ onready var animation_start_light = get_node("RaceWorld/StartLight/AnimationStar
 onready var start_light = get_node("RaceWorld/StartLight")
 onready var audio_race_light_player = get_node("RaceWorld/AudioStreamRaceLight")
 onready var audio_race_start_player = get_node("RaceWorld/AudioStreamRaceStart")
-var race_light_audio = load("res://audio/race_light.mp3")
-var race_start_audio = load("res://audio/race_start.mp3")
+var race_light_audio = load("res://audio/SlotRace/race_light.mp3")
+var race_start_audio = load("res://audio/SlotRace/race_start.mp3")
 
 var emit_signal_player1: bool = false
 var emit_signal_player2: bool = false

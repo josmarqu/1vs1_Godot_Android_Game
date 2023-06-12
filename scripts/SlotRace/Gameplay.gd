@@ -23,9 +23,9 @@ var blue_car_prev_offset: float = 0
 var red_car_prev_offset: float = 0
 var blue_car_running: bool = false
 var red_car_running: bool = false
-var lap_finished_audio = load("res://audio/lap_finished.mp3")
-var car_running_audio = load("res://audio/car_running.mp3")
-var car_crash_audio = load("res://audio/car_crash.mp3")
+var lap_finished_audio = load("res://audio/SlotRace/lap_finished.mp3")
+var car_running_audio = load("res://audio/SlotRace/car_running.mp3")
+var car_crash_audio = load("res://audio/SlotRace/car_crash.mp3")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
