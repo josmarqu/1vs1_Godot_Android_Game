@@ -2,7 +2,7 @@
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
 [ext_resource path="res://fonts/Sora/static/Sora-SemiBold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://scripts/Main.gd" type="Script" id=3]
+[ext_resource path="res://scripts/Home.gd" type="Script" id=3]
 [ext_resource path="res://icons/blue_play_button.png" type="Texture" id=4]
 [ext_resource path="res://icons/red_music_on_button.png" type="Texture" id=5]
 [ext_resource path="res://icons/red_speaker_on_button.png" type="Texture" id=6]
@@ -118,6 +118,8 @@ margin_bottom = 500.0
 rect_scale = Vector2( 0.35, 0.35 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+shortcut_in_tooltip = false
+action_mode = 0
 texture_normal = ExtResource( 4 )
 expand = true
 stretch_mode = 3
@@ -142,6 +144,7 @@ margin_bottom = 672.0
 rect_scale = Vector2( 0.25, 0.25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+toggle_mode = true
 texture_normal = ExtResource( 5 )
 texture_pressed = ExtResource( 8 )
 expand = true
@@ -154,14 +157,19 @@ margin_bottom = 173.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="MusicButton" type="TextureButton" parent="Components/ButtonsContainer/VBoxContainer/HBoxContainer/Control2"]
+[node name="SpeakerButton" type="TextureButton" parent="Components/ButtonsContainer/VBoxContainer/HBoxContainer/Control2"]
 margin_left = 97.0
 margin_right = 1097.0
 margin_bottom = 672.0
 rect_scale = Vector2( 0.25, 0.25 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+toggle_mode = true
 texture_normal = ExtResource( 6 )
 texture_pressed = ExtResource( 7 )
 expand = true
 stretch_mode = 3
+
+[connection signal="pressed" from="Components/ButtonsContainer/VBoxContainer/Control/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="Components/ButtonsContainer/VBoxContainer/HBoxContainer/Control/MusicButton" to="." method="_on_MusicButton_pressed"]
+[connection signal="pressed" from="Components/ButtonsContainer/VBoxContainer/HBoxContainer/Control2/SpeakerButton" to="." method="_on_SpeakerButton_pressed"]

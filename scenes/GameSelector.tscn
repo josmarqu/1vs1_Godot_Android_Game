@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://scripts/Minigames.gd" type="Script" id=1]
+[ext_resource path="res://scripts/GameSelector.gd" type="Script" id=1]
 [ext_resource path="res://fonts/Sora/static/Sora-SemiBold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://icons/air_hockey_button_no_pressed.png" type="Texture" id=3]
 [ext_resource path="res://icons/gray_finish_line_button.png" type="Texture" id=4]
@@ -110,6 +110,7 @@ margin_bottom = 455.0
 rect_scale = Vector2( 0.6, 0.6 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+toggle_mode = true
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 9 )
 expand = true
@@ -141,6 +142,7 @@ margin_bottom = 455.0
 rect_scale = Vector2( 0.6, 0.6 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+toggle_mode = true
 texture_normal = ExtResource( 11 )
 texture_pressed = ExtResource( 10 )
 expand = true
@@ -172,6 +174,7 @@ margin_bottom = 455.0
 rect_scale = Vector2( 0.6, 0.6 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
+toggle_mode = true
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 7 )
 expand = true
@@ -224,7 +227,7 @@ margin_bottom = 209.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="GoBackButton" type="TextureButton" parent="Components/GoBack&FinishGame/Control2"]
+[node name="FinishCountButton" type="TextureButton" parent="Components/GoBack&FinishGame/Control2"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 809.0
@@ -327,3 +330,9 @@ custom_fonts/font = SubResource( 3 )
 text = "0"
 align = 1
 valign = 2
+
+[connection signal="pressed" from="Components/Buttons/Control/AirHockeyButton" to="." method="_on_AirHockeyButton_pressed"]
+[connection signal="pressed" from="Components/Buttons/Control2/PingPongButton" to="." method="_on_PingPongButton_pressed"]
+[connection signal="pressed" from="Components/Buttons/Control3/SlotRaceButton" to="." method="_on_SlotRaceButton_pressed"]
+[connection signal="pressed" from="Components/GoBack&FinishGame/Control/GoBackButton" to="." method="_on_GoBackButton_pressed"]
+[connection signal="pressed" from="Components/Score&Play/Background/HBoxContainer/Control2/PlayButton" to="." method="_on_PlayButton_pressed"]
